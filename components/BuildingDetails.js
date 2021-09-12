@@ -74,7 +74,6 @@ import {useNavigation} from '@react-navigation/native';
                     )}
                         >
                 </FlatList>
-                
             </View>
             <View style={styles.container2}>
                 <Text style={styles.title}>Email:</Text>
@@ -89,7 +88,7 @@ import {useNavigation} from '@react-navigation/native';
                         data = {other_contacts}
                         keyExtractor = {(item,index)=>item.id.toString()}
                         renderItem = {({item})=>(
-                            <TouchableOpacity key={index} style={styles.phone} onPress={() => setData({"contactIndex":item.id})}>
+                            <TouchableOpacity key={index} style={styles.otherContact} onPress={() => setData({"contactIndex":item.id})}>
                                 <Text style={styles.cardName}>{item.name}</Text>
                                 <Text style={styles.cardPhone}>{item.phone}</Text>
                             </TouchableOpacity>
@@ -195,4 +194,8 @@ const styles = StyleSheet.create({
     cardPhone:{
         flex:1,
     },
+    otherContact:{
+        paddingLeft:"5px",
+        flexDirection:"row",
+    }
 });

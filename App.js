@@ -25,12 +25,11 @@ export default function App() {
 function HomeScreen({navigation}){
   const [data,setData] = useState([]);
   const loadData = async() =>{
-    //try{
       const response = await fetch("https://s3.amazonaws.com/decom_uploads/external/sites.json")
       .then((response)=>response.json())
       .then((data)=>{
         setData(data.sites)
-        navigation.push('Details',{item:data.sites[0]})
+        //navigation.push('Details',{item:data.sites[0]})
       })
   }
 
@@ -65,7 +64,7 @@ function DetailsScreen({ route, navigation }){
 
 const styles = StyleSheet.create({
   containerHome: {
-    marginTop: "5px",
+    marginTop: "15px",
     alignSelf: "stretch",
   },
 });
