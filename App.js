@@ -6,8 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import BuildingCard from './components/BuildingCard';
 import BuildingDetails from './components/BuildingDetails';
-import StackUtils from 'stack-utils';
-import './App.css';
+
 
 const Stack = createNativeStackNavigator();
 

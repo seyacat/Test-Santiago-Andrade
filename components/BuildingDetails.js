@@ -36,7 +36,7 @@ import {useNavigation} from '@react-navigation/native';
         }
     }
 
-    console.log(phones);
+    console.log(other_contacts);
 
     return(
         <View>
@@ -65,7 +65,7 @@ import {useNavigation} from '@react-navigation/native';
                 <Text style={styles.title}>Phone:</Text>
                 <FlatList
                     data = {phones}
-                    keyExtractor = {(item,index)=>item.id.toString()}
+                    keyExtractor = {(phones,index)=>phones.id.toString()}
                     renderItem = {({item})=>(
                         <View key={index} style={styles.phone}>
                             <Text style={styles.phoneNumber}>{item.phone}</Text>
@@ -86,7 +86,7 @@ import {useNavigation} from '@react-navigation/native';
                 <View style={styles.cardBody}>
                     <FlatList
                         data = {other_contacts}
-                        keyExtractor = {(item,index)=>item.id.toString()}
+                        keyExtractor = {(contact,index)=>contact.id.toString()}
                         renderItem = {({item})=>(
                             <TouchableOpacity key={index} style={styles.otherContact} onPress={() => setData({"contactIndex":item.id})}>
                                 <Text style={styles.cardName}>{item.name}</Text>
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     header: {
         flex:1,
         borderColor: "#ddd",
-        borderBottomWidth: "1px",
+        borderBottomWidth: 1,
         justifyContent: "center",
         flexDirection:"row",
         padding:"5px",
@@ -135,13 +135,14 @@ const styles = StyleSheet.create({
     },
     image:{
         flex:1,
+        aspectRatio: 16/9,
     },
     icon:{
         flex:1
     },
     col2:{
         flex: 1,
-        alignItems: "left",
+        alignItems: "flex-start",
         justifyContent: "center",
         paddingLeft: "20px",
     },
@@ -150,7 +151,7 @@ const styles = StyleSheet.create({
         marginBottom:"5px",
     },
     text:{
-        alignItems: "left",
+        alignItems: "flex-start",
         justifyContent: "center",
         flexShrink: 1,
         width: "100%",
@@ -179,7 +180,7 @@ const styles = StyleSheet.create({
         borderColor: "#ddd",
     },
     cardHead: {
-        alignItems: "left",
+        alignItems: "flex-start",
         padding:"5px",
         justifyContent: "center",
         borderBottomWidth:1,
