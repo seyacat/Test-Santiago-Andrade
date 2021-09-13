@@ -112,26 +112,26 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         justifyContent: "center",
         flexDirection:"row",
-        padding:"5px",
-        paddingLeft:"15px",
+        padding:5,
+        paddingLeft:15,
     },
     headerTitle: {
         fontWeight:"bold",
         flex:6,
-        padding:"5px",
+        padding:5,
         justifyContent: "center",
     },
     container: {
 
         flexDirection:"row",
         //backgroundColor: "#bcbcbc",
-        margin:"5px",
-        marginTop:"20px",
-        height:"170px"
+        margin:5,
+        marginTop:20,
+        height:170
     },
     col1:{
         flex: 1,
-        paddingLeft: "15px",
+        paddingLeft: 15,
     },
     image:{
         flex:1,
@@ -144,25 +144,24 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "flex-start",
         justifyContent: "center",
-        paddingLeft: "20px",
+        paddingLeft: 20,
     },
     title:{
         fontWeight:"bold",
-        marginBottom:"5px",
+        marginBottom:5,
     },
     text:{
         alignItems: "flex-start",
         justifyContent: "center",
         flexShrink: 1,
-        width: "100%",
-        marginBottom:"10px",
+        marginBottom:10,
     },
     container2: {
         flex:1,
-        paddingLeft: "15px",
+        paddingLeft: 15,
         //backgroundColor: "#bcbcbc",
-        margin:"5px",
-        height:"170px"
+        margin:5,
+        height:170
     },
     phone: {
         flexDirection:"row",
@@ -174,14 +173,14 @@ const styles = StyleSheet.create({
         flex:1,
     },
     card: {
-        margin:"10px",
-        minHeight:"100px",
+        margin:10,
+        minHeight:100,
         borderWidth:1,
         borderColor: "#ddd",
     },
     cardHead: {
         alignItems: "flex-start",
-        padding:"5px",
+        padding:5,
         justifyContent: "center",
         borderBottomWidth:1,
         borderColor: "#ddd",
@@ -196,7 +195,7 @@ const styles = StyleSheet.create({
         flex:1,
     },
     otherContact:{
-        paddingLeft:"5px",
+        paddingLeft:5,
         flexDirection:"row",
     }
 });

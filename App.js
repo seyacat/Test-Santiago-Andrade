@@ -63,7 +63,9 @@ function DetailsScreen({ route, navigation }){
 
 const styles = StyleSheet.create({
   containerHome: {
-    marginTop: "15px",
-    alignSelf: "stretch",
+    flex:1,
+  },
+  containerDetails: {
+    felx:1,
   },
 });

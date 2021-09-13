@@ -21,17 +21,17 @@ const styles = StyleSheet.create({
     container: {
         flexDirection:"row",
         //backgroundColor: "#bcbcbc",
-        marginBottom:"5px",
-        marginLeft:"5px",
-        marginRight:"5px",
-        height:"100px",
+        marginBottom:5,
+        marginLeft:5,
+        marginRight:5,
+        height:100,
         borderWidth: 1,
         borderColor: "#ddd",
     },
     col1:{
         flex: 1,
-        width: "100",
-        padding: "5px",
+        width: 100,
+        padding: 5,
     },
     image:{
         flex:1,
@@ -41,17 +41,17 @@ const styles = StyleSheet.create({
         flex: 3,
         alignItems: "flex-start",
         justifyContent: "center",
-        width: "100",
-        paddingLeft: "20px",
+        width: 100,
+        paddingLeft: 20,
     },
     title:{
         fontWeight:"bold",
-        marginBottom:"10px",
+        marginBottom:10,
     },
     text:{
         alignItems: "flex-start",
         justifyContent: "center",
         flexShrink: 1,
-        width: "100%",
+        width: 100,
     }
 });
