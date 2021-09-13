@@ -36,6 +36,14 @@ import {useNavigation} from '@react-navigation/native';
         }
     }
 
+    useEffect(()=>{
+        console.log("effect");
+        const unsubscribe = navigation.addListener('gestureEnd', (e) => {
+            navigation.navigate('Home')
+          });
+        return unsubscribe;
+    },[navigation])
+
     return(
         <View style={styles.content}>
             <TouchableOpacity style={styles.header} onPress={() => navigation.navigate('Home',{item:item})}>
@@ -51,7 +59,6 @@ import {useNavigation} from '@react-navigation/native';
                 <View style={styles.col2}>
                     <Text style={styles.title}>Name:</Text>
                     <Text style={styles.text}>{item.name}</Text>
-                    <Text style={styles.text}></Text>
                     <Text style={styles.text}></Text>
                     <Text style={styles.title}>Main Contact:</Text>
                     <Text style={styles.text}>{mainContact}</Text>
@@ -97,7 +104,6 @@ import {useNavigation} from '@react-navigation/native';
                     </FlatList>
                 </View>
             </View>
-
         </View>
     )
 
@@ -163,7 +169,6 @@ const styles = StyleSheet.create({
         paddingLeft: 15,
         justifyContent: "center",
         margin:5,
-        
     },
     phone: {
         flexDirection:"row",

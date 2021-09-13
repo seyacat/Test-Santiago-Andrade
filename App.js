@@ -3,20 +3,26 @@ import React, {useState , useEffect} from 'react';
 import {TouchableOpacity, FlatList, StyleSheet, Text, View, Platform } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
 import BuildingCard from './components/BuildingCard';
 import BuildingDetails from './components/BuildingDetails';
-
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
   return (
     <NavigationContainer >
       <View style={styles.safeArea} />
-      <Stack.Navigator screenOptions={{headerShown:false}} initialRoute="Home">
+      <Stack.Navigator
+        screenOptions={{headerShown:false,
+          animationEnabled:true,
+          presentation:"card",
+          gestureEnabled:true,
+          gestureDirection:"horizontal"}} 
+        initialRoute="Home"
+        >
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen  name="Details" component={DetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -29,14 +35,13 @@ function HomeScreen({navigation}){
       .then((response)=>response.json())
       .then((data)=>{
         setData(data.sites)
-        navigation.push('Details',{item:data.sites[0]})
+        //navigation.push('Details',{item:data.sites[0]})
       })
   }
 
   useEffect(()=>{
     loadData();
   },[]);
-
 
   return (
     <View style={styles.containerHome}>
@@ -64,7 +69,7 @@ function DetailsScreen({ route, navigation }){
 
 const styles = StyleSheet.create({
   safeArea: {
-    height:(Platform.OS==="ios") ? 50 : 0,
+    height:(Platform.OS==="ios" || Platform.OS==="android") ? 50 : 0,
   },
   containerHome: {
     flex:1,
