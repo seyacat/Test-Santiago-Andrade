@@ -36,8 +36,6 @@ import {useNavigation} from '@react-navigation/native';
         }
     }
 
-    console.log(other_contacts);
-
     return(
         <View style={styles.content}>
             <TouchableOpacity style={styles.header} onPress={() => navigation.navigate('Home',{item:item})}>
@@ -128,7 +126,6 @@ const styles = StyleSheet.create({
     container: {
         flex:2,
         flexDirection:"row",
-        //backgroundColor: "#bcbcbc",
         margin:5,
         marginTop:20,
         height:170
