@@ -6,7 +6,7 @@ export default function BuildingCard (props){
     return(
         <View style={styles.container}>
             <View style={styles.col1}>
-                <Image style={styles.image} source={{ uri:item.image }}></Image>
+                <Image resizeMode="contain" style={styles.image} source={{ uri:item.image }}></Image>
             </View>
             <View style={styles.col2}>
                 <Text style={styles.title}>{item.name}</Text>
@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
     },
     image:{
         flex:1,
-        aspectRatio: 16/9,
     },
     col2:{
         flex: 3,

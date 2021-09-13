@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState , useEffect} from 'react';
-import {TouchableOpacity, FlatList, StyleSheet, Text, View } from 'react-native';
+import {TouchableOpacity, FlatList, StyleSheet, Text, View, Platform } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -13,6 +13,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer >
+      <View style={styles.safeArea} />
       <Stack.Navigator screenOptions={{headerShown:false}} initialRoute="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
@@ -28,7 +29,7 @@ function HomeScreen({navigation}){
       .then((response)=>response.json())
       .then((data)=>{
         setData(data.sites)
-        //navigation.push('Details',{item:data.sites[0]})
+        navigation.push('Details',{item:data.sites[0]})
       })
   }
 
@@ -62,10 +63,13 @@ function DetailsScreen({ route, navigation }){
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    height:(Platform.OS==="ios") ? 50 : 0,
+  },
   containerHome: {
     flex:1,
   },
   containerDetails: {
-    felx:1,
+    flex:1,
   },
 });

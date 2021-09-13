@@ -39,14 +39,16 @@ import {useNavigation} from '@react-navigation/native';
     console.log(other_contacts);
 
     return(
-        <View>
+        <View style={styles.content}>
             <TouchableOpacity style={styles.header} onPress={() => navigation.navigate('Home',{item:item})}>
                     <Text style={styles.headerTitle}>&#60; All Sites</Text>
-                    <Image resizeMode="contain" style={styles.icon} source={require("../assets/edit.png")}/>
+                    <View style={{flex:1,flexDirection:"row-reverse"}}>
+                        <Image resizeMode="contain" style={styles.icon} source={require("../assets/edit.png")}/>
+                    </View>
             </TouchableOpacity>
             <View style={styles.container}>
                 <View style={styles.col1}>
-                    <Image resizeMode="resize" style={styles.image} source={{ uri:item.image }}></Image>
+                    <Image resizeMode="cover" style={styles.image} source={{ uri:item.image }}></Image>
                 </View>
                 <View style={styles.col2}>
                     <Text style={styles.title}>Name:</Text>
@@ -106,23 +108,25 @@ import {useNavigation} from '@react-navigation/native';
 export default BuildingDetails;
 
 const styles = StyleSheet.create({
-    header: {
+    content:{
         flex:1,
+    },
+    header: {
+        width:"100%",
+        height:50,
         borderColor: "#ddd",
         borderBottomWidth: 1,
-        justifyContent: "center",
         flexDirection:"row",
         padding:5,
         paddingLeft:15,
     },
     headerTitle: {
         fontWeight:"bold",
-        flex:6,
-        padding:5,
+        padding:10,
         justifyContent: "center",
     },
     container: {
-
+        flex:2,
         flexDirection:"row",
         //backgroundColor: "#bcbcbc",
         margin:5,
@@ -135,10 +139,10 @@ const styles = StyleSheet.create({
     },
     image:{
         flex:1,
-        aspectRatio: 16/9,
     },
     icon:{
-        flex:1
+        width:40,
+        height:40,
     },
     col2:{
         flex: 1,
@@ -158,10 +162,11 @@ const styles = StyleSheet.create({
     },
     container2: {
         flex:1,
+        minHeight:10,
         paddingLeft: 15,
-        //backgroundColor: "#bcbcbc",
+        justifyContent: "center",
         margin:5,
-        height:170
+        
     },
     phone: {
         flexDirection:"row",
@@ -174,7 +179,7 @@ const styles = StyleSheet.create({
     },
     card: {
         margin:10,
-        minHeight:100,
+        flex:2,
         borderWidth:1,
         borderColor: "#ddd",
     },
