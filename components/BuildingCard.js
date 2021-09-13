@@ -20,7 +20,6 @@ export default function BuildingCard (props){
 const styles = StyleSheet.create({
     container: {
         flexDirection:"row",
-        //backgroundColor: "#bcbcbc",
         marginBottom:5,
         marginLeft:5,
         marginRight:5,
